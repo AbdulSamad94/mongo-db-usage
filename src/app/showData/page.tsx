@@ -11,9 +11,12 @@ interface PostType {
 }
 
 const handleData = async () => {
-  const response = await fetch("http://localhost:3000/api/get_post_data", {
-    cache: "no-store",
-  });
+  const response = await fetch(
+    "https://mongo-db-usage.vercel.app/api/get_post_data",
+    {
+      cache: "no-store",
+    }
+  );
   const data = await response.json();
   if (data.success) {
     return data.result;

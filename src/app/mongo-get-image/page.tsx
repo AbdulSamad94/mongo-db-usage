@@ -15,7 +15,9 @@ const GetMongoImage = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch("/api/get-mongo-img");
+        const response = await fetch(
+          "https://mongo-db-usage.vercel.app/api/get-mongo-img"
+        );
         const data = await response.json();
         console.log("Successfully fetched", data);
         if (data.success && Array.isArray(data.Images)) {

@@ -10,11 +10,14 @@ const Page = () => {
   const [postDescription, setPostDescription] = useState("");
 
   const handleSubmit = async () => {
-    const response = await fetch("http://localhost:3000/api/get_post_data", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ author, date, postTitle, postDescription }),
-    });
+    const response = await fetch(
+      "https://mongo-db-usage.vercel.app/api/get_post_data",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ author, date, postTitle, postDescription }),
+      }
+    );
     const data = await response.json();
     if (data.success) {
       alert("Data sent successfully");

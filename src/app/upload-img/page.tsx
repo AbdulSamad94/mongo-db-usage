@@ -14,10 +14,13 @@ const UploadImg = () => {
     const data = new FormData();
     data.append("file", file);
     try {
-      const result = await fetch("/api/upload-img-route", {
-        method: "POST",
-        body: data,
-      });
+      const result = await fetch(
+        "https://mongo-db-usage.vercel.app/api/upload-img-route",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
       const response = await result.json();
       if (response.success) {
         alert("Img succesfully uploaded");

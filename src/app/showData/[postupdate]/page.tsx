@@ -38,7 +38,7 @@ const Page = (props: PutValue) => {
 
   const updataData = async () => {
     const response = await fetch(
-      `http://localhost:3000/api/putApiMethod/${id}`,
+      `https://mongo-db-usage.vercel.app/putApiMethod/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

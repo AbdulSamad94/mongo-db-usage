@@ -15,10 +15,13 @@ const Page = () => {
     data.append("file", file);
 
     try {
-      const response = await fetch("/api/upload-mongo-img", {
-        method: "POST",
-        body: data,
-      });
+      const response = await fetch(
+        "https://mongo-db-usage.vercel.app/api/upload-mongo-img",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
 
       const result = await response.json();
 
