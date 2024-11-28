@@ -20,7 +20,9 @@ const Page = (props: PutValue) => {
 
   useEffect(() => {
     const handleApi = async () => {
-      const res = await fetch(`http://localhost:3000/api/putApiMethod/${id}`);
+      const res = await fetch(
+        `https://mongo-db-usage.vercel.app/api/putApiMethod/${id}`
+      );
       const data = await res.json();
 
       if (data.success) {
